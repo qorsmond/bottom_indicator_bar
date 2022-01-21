@@ -11,6 +11,7 @@ class BottomIndicatorBar extends StatefulWidget {
   final Color activeColor;
   final Color inactiveColor;
   final Color backgroundColor;
+  final Color foregroundColor;
   final bool shadow;
   int currentIndex;
   late dynamic iconData;
@@ -25,6 +26,7 @@ class BottomIndicatorBar extends StatefulWidget {
     this.inactiveColor = Colors.grey,
     this.indicatorColor = Colors.grey,
     this.backgroundColor = Colors.white,
+    this.foregroundColor = Colors.black,
     this.shadow = true,
     this.currentIndex = 0,
   }) : super(key: key);
@@ -137,6 +139,19 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
     }
   }
 
+  Widget _setLabel(BottomIndicatorNavigationBarItem item) {
+    if (item.label == null) {
+      return SizedBox.shrink();
+    }
+    if (item.label is String) {
+      return Text(
+        item.label,
+        style: TextStyle(color: widget.foregroundColor),
+      );
+    }
+    return item.label;
+  }
+
   Widget _buildItemWidget(
       BottomIndicatorNavigationBarItem item, bool isSelected) {
     return Container(
@@ -146,7 +161,12 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          _setIcon(item),
+          Column(
+            children: [
+              _setIcon(item),
+              _setLabel(item)
+            ],
+          ),
         ],
       ),
     );
