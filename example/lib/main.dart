@@ -1,4 +1,4 @@
-import 'package:bottom_indicator_bar_svg/bottom_indicator_bar.dart';
+import 'package:bottom_indicator_bar_svg/bottom_indicator_bar_svg.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
