@@ -9,3 +9,7 @@
 ## [2.1.0] - 2022/01/21.
 
 * Add ability to use svg images as icons 
+
+## [2.1.2] - 2022/01/21.
+
+* Add ability to add labels 
