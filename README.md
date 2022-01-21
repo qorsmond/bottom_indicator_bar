@@ -12,7 +12,7 @@ Add the dependency in `pubspec.yaml`:
 ```yaml
 dependencies:
   ...
-  bottom_indicator_bar: lastest_version
+  bottom_indicator_bar_svg: lastest_version
 ```
 
 ## Basic Usage
