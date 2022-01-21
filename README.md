@@ -1,6 +1,6 @@
 # bottom_indicator_bar
 
-A flutter bottom tab with indicator, similar to the bottom tab of facebook app 
+A flutter bottom tab with indicator, similar to the bottom tab of facebook app (with small modification to allow svg icons)
 
 
 ![bottom_indicator_bar Gif](screenshot.gif "bottom_indicator_bar")
