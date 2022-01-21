@@ -1,4 +1,4 @@
-# bottom_indicator_bar
+# bottom_indicator_bar_svg
 
 A flutter bottom tab with indicator, similar to the bottom tab of facebook app (with small modification to allow svg icons)
 
