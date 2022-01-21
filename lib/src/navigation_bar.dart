@@ -74,7 +74,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
             : null,
       ),
       child: Stack(
-        overflow: Overflow.visible,
+        clipBehavior: Clip.hardEdge,
         children: <Widget>[
           Positioned(
             top: INDICATOR_HEIGHT,
