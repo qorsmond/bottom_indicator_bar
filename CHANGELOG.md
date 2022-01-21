@@ -5,3 +5,7 @@
 ## [2.0.0] - 2021/06/11.
 
 * Upgrade null safety and update example project 
+
+## [2.1.0] - 2022/01/21.
+
+* Add ability to use svg images as icons 
