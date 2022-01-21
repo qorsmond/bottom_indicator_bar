@@ -2,9 +2,7 @@
 
 A flutter bottom tab with indicator, similar to the bottom tab of facebook app (with small modification to allow svg icons)
 
-
-![Screen Recording 2022-01-21 at 21 48 54](https://user-images.githubusercontent.com/4716711/150591400-195c7567-2c4d-4469-91ec-ac245ab79d0f.gif "bottom_indicator_bar")
-
+![ezgif-2-f9b44356a4](https://user-images.githubusercontent.com/4716711/150592290-a2fcf5a9-d3bc-46f9-84f0-04d0cb84cfa8.gif "bottom_indicator_bar")
 
 
 ## Getting Started
