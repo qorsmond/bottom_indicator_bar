@@ -3,7 +3,8 @@
 A flutter bottom tab with indicator, similar to the bottom tab of facebook app (with small modification to allow svg icons)
 
 
-![bottom_indicator_bar Gif](screenshot.gif "bottom_indicator_bar")
+![Screen Recording 2022-01-21 at 21 48 54](https://user-images.githubusercontent.com/4716711/150591400-195c7567-2c4d-4469-91ec-ac245ab79d0f.gif "bottom_indicator_bar")
+
 
 
 ## Getting Started
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   final List<BottomIndicatorNavigationBarItem> items = [
     BottomIndicatorNavigationBarItem(icon: Icons.home),
     BottomIndicatorNavigationBarItem(icon: Icons.search),
-    BottomIndicatorNavigationBarItem(icon: Icons.settings),
+    BottomIndicatorNavigationBarItem(icon: 'assets/accountIcon.svg'),
   ];
 
 
