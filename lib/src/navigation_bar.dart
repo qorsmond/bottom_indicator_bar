@@ -1,6 +1,7 @@
 import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'navigation_bar_item.dart';
 
@@ -11,7 +12,7 @@ class BottomIndicatorBar extends StatefulWidget {
   final Color inactiveColor;
   final bool shadow;
   int currentIndex;
-  late IconData iconData;
+  late dynamic iconData;
   final ValueChanged<int> onTap;
   final List<BottomIndicatorNavigationBarItem> items;
 
@@ -115,11 +116,23 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
   }
 
   Widget _setIcon(BottomIndicatorNavigationBarItem item) {
-    return Icon(
-      item.icon,
-      color: widget.iconData == item.icon ? activeColor : widget.inactiveColor,
-      size: 35.0,
-    );
+    if (item.icon is IconData) {
+      return Icon(
+        item.icon,
+        color:
+            widget.iconData == item.icon ? activeColor : widget.inactiveColor,
+        size: 35.0,
+      );
+    } else if (item.icon is String && item.icon.contains('.svg')) {
+      return SvgPicture.asset(
+        item.icon,
+        color:
+            widget.iconData == item.icon ? activeColor : widget.inactiveColor,
+        height: 35.0,
+      );
+    } else {
+      return item.icon;
+    }
   }
 
   Widget _buildItemWidget(
