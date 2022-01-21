@@ -1,7 +1,7 @@
 # bottom_indicator_bar_svg
 
 A flutter bottom tab with indicator, similar to the bottom tab of facebook app 
-(with small modification to allow svg icons) - full credit to [https://github.com/DonsWayo](Juan Jose Carracedo)
+(with small modification to allow svg icons) - full credit to [Juan Jose Carracedo](https://github.com/DonsWayo)
 
 ![ezgif-2-f9b44356a4](https://user-images.githubusercontent.com/4716711/150592290-a2fcf5a9-d3bc-46f9-84f0-04d0cb84cfa8.gif "bottom_indicator_bar")
 
