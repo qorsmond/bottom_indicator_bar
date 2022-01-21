@@ -15,7 +15,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  bottom_indicator_bar:
+  bottom_indicator_bar_svg:
     dependency: "direct main"
     description:
       path: ".."
