@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   final List<BottomIndicatorNavigationBarItem> items = [
     BottomIndicatorNavigationBarItem(icon: Icons.home),
     BottomIndicatorNavigationBarItem(icon: Icons.search),
-    BottomIndicatorNavigationBarItem(icon: Icons.settings),
+    BottomIndicatorNavigationBarItem(icon: 'assets/accountIcon.svg'),
   ];
 
 
