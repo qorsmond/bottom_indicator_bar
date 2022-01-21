@@ -10,6 +10,7 @@ class BottomIndicatorBar extends StatefulWidget {
   final Color indicatorColor;
   final Color activeColor;
   final Color inactiveColor;
+  final Color backgroundColor;
   final bool shadow;
   int currentIndex;
   late dynamic iconData;
@@ -23,6 +24,7 @@ class BottomIndicatorBar extends StatefulWidget {
     this.activeColor = Colors.teal,
     this.inactiveColor = Colors.grey,
     this.indicatorColor = Colors.grey,
+    this.backgroundColor = Colors.white,
     this.shadow = true,
     this.currentIndex = 0,
   }) : super(key: key);
@@ -64,7 +66,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
       height: BAR_HEIGHT + MediaQuery.of(context).viewPadding.bottom,
       width: width,
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: widget.backgroundColor,
         boxShadow: widget.shadow
             ? [
                 BoxShadow(color: Colors.black12, blurRadius: 10),

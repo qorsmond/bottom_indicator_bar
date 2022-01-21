@@ -46,6 +46,7 @@ class _HomePageState extends State<HomePage> {
         activeColor: Colors.teal,
         inactiveColor: Colors.grey,
         indicatorColor: Colors.teal,
+        backgroundColor: Theme.of(context).cardColor,
       ),
     );
   }

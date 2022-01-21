@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/svg.dart';
 
 class BottomIndicatorNavigationBarItem {
   final dynamic icon;
@@ -7,6 +6,6 @@ class BottomIndicatorNavigationBarItem {
 
   BottomIndicatorNavigationBarItem({
     required this.icon,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = Colors.transparent,
   });
 }
