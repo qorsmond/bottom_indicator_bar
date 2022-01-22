@@ -13,6 +13,7 @@ class BottomIndicatorBar extends StatefulWidget {
   final Color backgroundColor;
   final bool shadow;
   final double iconSize;
+  final double barHeight;
   int currentIndex;
   final ValueChanged<int> onTap;
   final List<BottomIndicatorNavigationBarItem> items;
@@ -26,6 +27,7 @@ class BottomIndicatorBar extends StatefulWidget {
     this.indicatorColor = Colors.grey,
     this.backgroundColor = Colors.white,
     this.iconSize = 35.0,
+    this.barHeight = 60,
     this.shadow = true,
     this.currentIndex = 0,
   }) : super(key: key);
@@ -35,7 +37,6 @@ class BottomIndicatorBar extends StatefulWidget {
 }
 
 class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
-  static const double BAR_HEIGHT = 60;
   static const double INDICATOR_HEIGHT = 2;
 
   List<BottomIndicatorNavigationBarItem> get items => widget.items;
@@ -63,7 +64,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
     activeColor = widget.activeColor;
 
     return Container(
-      height: BAR_HEIGHT + MediaQuery.of(context).viewPadding.bottom,
+      height: widget.barHeight + MediaQuery.of(context).viewPadding.bottom,
       width: width,
       decoration: BoxDecoration(
         color: widget.backgroundColor,
@@ -123,7 +124,18 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
         color: isSelected ? activeColor : widget.inactiveColor,
         size: widget.iconSize,
       );
-    } else if (item.icon is String && item.icon.contains('.svg')) {
+    }
+    else if (item.icon is String && item.icon.contains('.svg')) {
+      if (item.activeIcon != null && item.activeIcon is String) {
+        var asset = item.icon;
+        if (isSelected) {
+          asset = item.activeIcon;
+        }
+        return SvgPicture.asset(
+          asset,
+          height: widget.iconSize,
+        );
+      }
       return SvgPicture.asset(
         item.icon,
         color: isSelected ? activeColor : widget.inactiveColor,
@@ -139,10 +151,13 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
       return SizedBox.shrink();
     }
     if (item.label is String) {
-      return Text(
-        item.label,
-        style:
-            TextStyle(color: isSelected ? activeColor : widget.inactiveColor),
+      return Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Text(
+          item.label,
+          style:
+              TextStyle(color: isSelected ? activeColor : widget.inactiveColor),
+        ),
       );
     }
     if (item.label is Text) {
@@ -164,7 +179,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
       BottomIndicatorNavigationBarItem item, bool isSelected) {
     return Container(
       color: item.backgroundColor,
-      height: BAR_HEIGHT,
+      height: widget.barHeight,
       width: width / items.length,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

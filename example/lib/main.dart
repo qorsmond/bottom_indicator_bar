@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     BottomIndicatorNavigationBarItem(icon: Icons.home, label: Text('Home')),
     BottomIndicatorNavigationBarItem(icon: Icons.search, label: 'Search'),
     BottomIndicatorNavigationBarItem(icon: 'assets/svgIcon.svg', label: 'Svg'),
+    BottomIndicatorNavigationBarItem(icon: 'assets/inactiveIcon.svg', activeIcon: 'assets/activeIcon.svg', label: 'Account'),
   ];
 
 
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (index) => print("Selected Index: $index"),
         items: items,
         iconSize: 30.0,
+        barHeight: 70.0,
         activeColor: Colors.blue,
         inactiveColor: Colors.grey,
         indicatorColor: Colors.blue,
