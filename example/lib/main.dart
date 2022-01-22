@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   final List<BottomIndicatorNavigationBarItem> items = [
     BottomIndicatorNavigationBarItem(icon: Icons.home, label: Text('Home')),
     BottomIndicatorNavigationBarItem(icon: Icons.search, label: 'Search'),
-    BottomIndicatorNavigationBarItem(icon: 'assets/accountIcon.svg'),
+    BottomIndicatorNavigationBarItem(icon: 'assets/svgIcon.svg', label: 'Svg'),
   ];
 
 
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Indicator Bottom Bar"),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.black87,
       ),
       body: Center(
         child: Column(
@@ -43,10 +43,10 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomIndicatorBar(
         onTap: (index) => print("Selected Index: $index"),
         items: items,
-        activeColor: Colors.teal,
+        activeColor: Colors.blue,
         inactiveColor: Colors.grey,
-        indicatorColor: Colors.teal,
-        backgroundColor: Theme.of(context).cardColor,
+        indicatorColor: Colors.blue,
+        backgroundColor: Colors.black87,
       ),
     );
   }

@@ -11,10 +11,9 @@ class BottomIndicatorBar extends StatefulWidget {
   final Color activeColor;
   final Color inactiveColor;
   final Color backgroundColor;
-  final Color foregroundColor;
   final bool shadow;
+  final double iconSize;
   int currentIndex;
-  late dynamic iconData;
   final ValueChanged<int> onTap;
   final List<BottomIndicatorNavigationBarItem> items;
 
@@ -26,7 +25,7 @@ class BottomIndicatorBar extends StatefulWidget {
     this.inactiveColor = Colors.grey,
     this.indicatorColor = Colors.grey,
     this.backgroundColor = Colors.white,
-    this.foregroundColor = Colors.black,
+    this.iconSize = 35.0,
     this.shadow = true,
     this.currentIndex = 0,
   }) : super(key: key);
@@ -56,7 +55,6 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
   @override
   void initState() {
     super.initState();
-    widget.iconData = widget.items[0].icon;
   }
 
   @override
@@ -113,41 +111,51 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
 
   _select(int index, BottomIndicatorNavigationBarItem item) {
     widget.currentIndex = index;
-    widget.iconData = item.icon;
     widget.onTap(widget.currentIndex);
 
     setState(() {});
   }
 
-  Widget _setIcon(BottomIndicatorNavigationBarItem item) {
+  Widget _setIcon(BottomIndicatorNavigationBarItem item, bool isSelected) {
     if (item.icon is IconData) {
       return Icon(
         item.icon,
-        color:
-            widget.iconData == item.icon ? activeColor : widget.inactiveColor,
-        size: 35.0,
+        color: isSelected ? activeColor : widget.inactiveColor,
+        size: widget.iconSize,
       );
     } else if (item.icon is String && item.icon.contains('.svg')) {
       return SvgPicture.asset(
         item.icon,
-        color:
-            widget.iconData == item.icon ? activeColor : widget.inactiveColor,
-        height: 35.0,
+        color: isSelected ? activeColor : widget.inactiveColor,
+        height: widget.iconSize,
       );
     } else {
       return item.icon;
     }
   }
 
-  Widget _setLabel(BottomIndicatorNavigationBarItem item) {
+  Widget _setLabel(BottomIndicatorNavigationBarItem item, bool isSelected) {
     if (item.label == null) {
       return SizedBox.shrink();
     }
     if (item.label is String) {
       return Text(
         item.label,
-        style: TextStyle(color: widget.foregroundColor),
+        style:
+            TextStyle(color: isSelected ? activeColor : widget.inactiveColor),
       );
+    }
+    if (item.label is Text) {
+      var textWidget = (item.label as Text);
+      if (textWidget.style != null) {
+        textWidget.style!.copyWith(color: Colors.white);
+      } else {
+        return Text(
+          textWidget.data!,
+          style:
+              TextStyle(color: isSelected ? activeColor : widget.inactiveColor),
+        );
+      }
     }
     return item.label;
   }
@@ -162,10 +170,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Column(
-            children: [
-              _setIcon(item),
-              _setLabel(item)
-            ],
+            children: [_setIcon(item, isSelected), _setLabel(item, isSelected)],
           ),
         ],
       ),
