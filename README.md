@@ -1,10 +1,16 @@
 # bottom_indicator_bar_svg
 
-A flutter bottom tab with indicator, similar to the bottom tab of facebook app 
-(with small modification to allow svg icons) - full credit to [Juan Jose Carracedo](https://github.com/DonsWayo)
+A flutter bottom tab with indicator, similar to the bottom tab of facebook app
+
+## Forked Mods
+
+- Allow svg icon assets for the icons
+
+- Add labels to nav items
+
+- Full credit to origanal repo by [Juan Jose Carracedo](https://github.com/DonsWayo)
 
 ![ezgif-2-f9b44356a4](https://user-images.githubusercontent.com/4716711/150592290-a2fcf5a9-d3bc-46f9-84f0-04d0cb84cfa8.gif "bottom_indicator_bar")
-
 
 ## Getting Started
 
@@ -27,9 +33,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<BottomIndicatorNavigationBarItem> items = [
-    BottomIndicatorNavigationBarItem(icon: Icons.home),
-    BottomIndicatorNavigationBarItem(icon: Icons.search),
-    BottomIndicatorNavigationBarItem(icon: 'assets/accountIcon.svg'),
+    BottomIndicatorNavigationBarItem(icon: Icons.home, label: Text('Home')),
+    BottomIndicatorNavigationBarItem(icon: Icons.search, label: 'Search'),
+    BottomIndicatorNavigationBarItem(icon: 'assets/svgIcon.svg', label: 'Svg'),
   ];
 
 
@@ -38,7 +44,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Indicator Bottom Bar"),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.black87,
       ),
       body: Center(
         child: Column(
@@ -50,9 +56,10 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomIndicatorBar(
         onTap: (index) => {},
         items: items,
-        activeColor: Colors.teal,
+        activeColor: Colors.blue,
         inactiveColor: Colors.grey,
-        indicatorColor: Colors.teal,
+        indicatorColor: Colors.blue,
+        backgroundColor: Colors.black87,
       ),
     );
   }
