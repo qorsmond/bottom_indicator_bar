@@ -8,7 +8,7 @@ A flutter bottom tab with indicator, similar to the bottom tab of facebook app
 
 - Add labels to nav items
 
-- Full credit to origanal repo by [Juan Jose Carracedo](https://github.com/DonsWayo)
+- Full credit to original repo by [Juan Jose Carracedo](https://github.com/DonsWayo)
 
 ![ezgif-2-f7cff4c02f](https://user-images.githubusercontent.com/4716711/150628594-1f1e96db-4bec-4809-977f-245a6fc546fc.gif "bottom_indicator_bar_svg")
 
@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomIndicatorBar(
         onTap: (index) => {},
         items: items,
+        iconSize: 30.0,
         activeColor: Colors.blue,
         inactiveColor: Colors.grey,
         indicatorColor: Colors.blue,

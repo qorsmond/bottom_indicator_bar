@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomIndicatorBar(
         onTap: (index) => print("Selected Index: $index"),
         items: items,
+        iconSize: 30.0,
         activeColor: Colors.blue,
         inactiveColor: Colors.grey,
         indicatorColor: Colors.blue,
