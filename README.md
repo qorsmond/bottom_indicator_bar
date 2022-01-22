@@ -10,7 +10,7 @@ A flutter bottom tab with indicator, similar to the bottom tab of facebook app
 
 - Full credit to origanal repo by [Juan Jose Carracedo](https://github.com/DonsWayo)
 
-![ezgif-2-f9b44356a4](https://user-images.githubusercontent.com/4716711/150592290-a2fcf5a9-d3bc-46f9-84f0-04d0cb84cfa8.gif "bottom_indicator_bar")
+![ezgif-2-f7cff4c02f](https://user-images.githubusercontent.com/4716711/150628594-1f1e96db-4bec-4809-977f-245a6fc546fc.gif "bottom_indicator_bar_svg")
 
 ## Getting Started
 
