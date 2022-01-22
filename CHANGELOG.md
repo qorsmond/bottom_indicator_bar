@@ -13,3 +13,7 @@
 ## [2.1.2] - 2022/01/21.
 
 * Add ability to add labels 
+
+## [2.1.3] - 2022/01/22.
+
+* Add ability to customize icon size and fix label selection color 
