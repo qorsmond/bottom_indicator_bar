@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   final List<BottomIndicatorNavigationBarItem> items = [
     BottomIndicatorNavigationBarItem(icon: Icons.home, label: Text('Home')),
     BottomIndicatorNavigationBarItem(icon: Icons.search, label: 'Search'),
-    BottomIndicatorNavigationBarItem(icon: 'assets/svgIcon.svg', label: 'Svg'),
+    BottomIndicatorNavigationBarItem(icon: 'assets/svgIcon.svg', label: 'Svg', iconSize: 28),
   ];
 
 
@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (index) => {},
         items: items,
         iconSize: 30.0,
+        indicatorHeight: 5, // Set to 0 to hide the indicator bar
         activeColor: Colors.blue,
         inactiveColor: Colors.grey,
         indicatorColor: Colors.blue,
