@@ -23,9 +23,12 @@ class _HomePageState extends State<HomePage> {
     BottomIndicatorNavigationBarItem(icon: Icons.home, label: Text('Home')),
     BottomIndicatorNavigationBarItem(icon: Icons.search, label: 'Search'),
     BottomIndicatorNavigationBarItem(icon: 'assets/svgIcon.svg', label: 'Svg'),
-    BottomIndicatorNavigationBarItem(icon: 'assets/inactiveIcon.svg', activeIcon: 'assets/activeIcon.svg', label: 'Account'),
+    BottomIndicatorNavigationBarItem(
+        icon: 'assets/inactiveIcon.svg',
+        activeIcon: 'assets/activeIcon.svg',
+        label: 'Account',
+        iconSize: 28),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +40,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-          ],
+          children: <Widget>[],
         ),
       ),
       bottomNavigationBar: BottomIndicatorBar(
@@ -50,6 +52,7 @@ class _HomePageState extends State<HomePage> {
         inactiveColor: Colors.grey,
         indicatorColor: Colors.blue,
         backgroundColor: Colors.black87,
+        indicatorHeight: 5,
       ),
     );
   }

@@ -21,3 +21,8 @@
 ## [2.1.5] - 2022/01/22.
 
 * Add ability to set active svg icon and ability to customize bar height
+
+## [3.0.0] - 2022/10/28.
+
+* Add ability to set the indicator bar height. Set to 0 to hide.
+* Add icon size override onto BottomIndicatorNavigationBarItem

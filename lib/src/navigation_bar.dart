@@ -10,6 +10,9 @@ class BottomIndicatorBar extends StatefulWidget {
   final Color indicatorColor;
   final Color activeColor;
   final Color inactiveColor;
+
+  /// Specify the indicator bar height. (Set to 0 to hide the indicator bar)
+  final double indicatorHeight;
   final Color backgroundColor;
   final bool shadow;
   final double iconSize;
@@ -26,6 +29,7 @@ class BottomIndicatorBar extends StatefulWidget {
     this.inactiveColor = Colors.grey,
     this.indicatorColor = Colors.grey,
     this.backgroundColor = Colors.white,
+    this.indicatorHeight = 2,
     this.iconSize = 35.0,
     this.barHeight = 60,
     this.shadow = true,
@@ -37,7 +41,7 @@ class BottomIndicatorBar extends StatefulWidget {
 }
 
 class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
-  static const double INDICATOR_HEIGHT = 2;
+  //static const double INDICATOR_HEIGHT = 2;
 
   List<BottomIndicatorNavigationBarItem> get items => widget.items;
 
@@ -78,7 +82,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
         clipBehavior: Clip.hardEdge,
         children: <Widget>[
           Positioned(
-            top: INDICATOR_HEIGHT,
+            top: widget.indicatorHeight,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: items.map((item) {
@@ -101,7 +105,7 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
               child: Container(
                 color: widget.indicatorColor,
                 width: width / items.length,
-                height: INDICATOR_HEIGHT,
+                height: widget.indicatorHeight,
               ),
             ),
           ),
@@ -122,10 +126,10 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
       return Icon(
         item.icon,
         color: isSelected ? activeColor : widget.inactiveColor,
-        size: widget.iconSize,
+        //size: widget.iconSize,
+        size: item.iconSize != null ? item.iconSize : widget.iconSize,
       );
-    }
-    else if (item.icon is String && item.icon.contains('.svg')) {
+    } else if (item.icon is String && item.icon.contains('.svg')) {
       if (item.activeIcon != null && item.activeIcon is String) {
         var asset = item.icon;
         if (isSelected) {
@@ -133,13 +137,14 @@ class _BottomIndicatorBarState extends State<BottomIndicatorBar> {
         }
         return SvgPicture.asset(
           asset,
-          height: widget.iconSize,
+          //height: widget.iconSize,
+          height: item.iconSize != null ? item.iconSize : widget.iconSize,
         );
       }
       return SvgPicture.asset(
         item.icon,
         color: isSelected ? activeColor : widget.inactiveColor,
-        height: widget.iconSize,
+        height: item.iconSize != null ? item.iconSize : widget.iconSize,
       );
     } else {
       return item.icon;
